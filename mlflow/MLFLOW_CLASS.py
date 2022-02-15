@@ -1,4 +1,5 @@
 import mlflow
+import webbrowser
 class MLFLOW:
     '''import webbrowser'''
     def __init__(self):
@@ -17,5 +18,12 @@ class MLFLOW:
     def visualize_ui(self,browser_path='http://127.0.0.1:5000'):
         return webbrowser.open(browser_path)
 
-    
+if not KAGGLE_NOTEBOOK:
+    %cd kaggle_feedack_code/notebook
+
+#instance
 MLFLOW=MLFLOW()
+#run
+MLFLOW.saving(exp_name,run_name,*score,**params)
+
+MLFLOW.visualize_ui()
